@@ -1,11 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Chapter House Bookshop | Home</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-    <h1>Welcome to the Home Page</h1>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Chapter House Bookshop</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="books.html">Books</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+
+          <!-- Add these later when you create more pages -->
+          <!--
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categories</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="offers.html">Offers</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section text-white d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1 class="display-4 fw-bold">Find Your Next Great Read</h1>
+
+          <p class="lead mt-3">
+            Chapter House Bookshop offers fiction, academic books, business titles,
+            children’s books, and personal development reads for students, families,
+            and book lovers.
+          </p>
+
+          <div class="mt-4">
+            <a href="books.html" class="btn btn-warning btn-lg me-2">
+              Browse Books
+            </a>
+
+            <a href="contact.html" class="btn btn-outline-light btn-lg">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Welcome Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <h2 class="fw-bold">Welcome to Chapter House Bookshop</h2>
+
+          <p>
+            We are a community-focused bookshop that helps readers access quality
+            books at affordable prices. Whether you are looking for school reading
+            material, novels, revision guides, or business books, our collection is
+            carefully selected to serve different reading needs.
+          </p>
+
+          <p>
+            Our goal is simple: to make reading easier, enjoyable, and more accessible
+            for everyone.
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded shadow-sm">
+            <h3 class="h5 fw-bold">Why Shop With Us?</h3>
+
+            <ul class="list-unstyled mt-3">
+              <li class="mb-2">✔ Wide range of book categories</li>
+              <li class="mb-2">✔ Affordable prices for students and families</li>
+              <li class="mb-2">✔ Friendly customer support</li>
+              <li class="mb-2">✔ New arrivals every month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Popular Categories</h2>
+        <p class="text-muted">
+          Explore some of the most requested sections in our bookshop.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Fiction</h3>
+              <p class="card-text">
+                Novels, African literature, mystery, romance, and contemporary stories.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Academic</h3>
+              <p class="card-text">
+                Textbooks, revision guides, dictionaries, and school reading materials.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Business</h3>
+              <p class="card-text">
+                Entrepreneurship, finance, marketing, leadership, and productivity books.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <h3 class="h5 card-title">Children</h3>
+              <p class="card-text">
+                Storybooks, early learning books, picture books, and activity books.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="books.html" class="btn btn-dark">View Book Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Books -->
+
+
+  <!-- Call To Action -->
+  <section class="py-5 bg-dark text-white text-center">
+    <div class="container">
+      <h2 class="fw-bold">Looking for a Specific Book?</h2>
+
+      <p class="lead">
+        Contact us and we will help you check availability or recommend a similar title.
+      </p>
+
+      <a href="contact.html" class="btn btn-warning btn-lg">
+        Send an Inquiry
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h3 class="h5">Chapter House Bookshop</h3>
+          <p class="mb-0">
+            Quality books for students, families, and everyday readers.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="books.html" class="text-white text-decoration-none">Books</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Contact</h4>
+          <p class="mb-1">Email: info@chapterhouse.co.ke</p>
+          <p class="mb-1">Phone: +254 700 123 456</p>
+          <p class="mb-0">Location: Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary" />
+
+      <p class="text-center mb-0">
+        &copy; 2026 Chapter House Bookshop. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
