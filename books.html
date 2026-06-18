@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Chapter House Bookshop | Books</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .book-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Chapter House Bookshop</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="books.html">Books</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="books-header text-black text-center d-flex align-items-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Our Book Catalogue</h1>
+      <p class="lead">
+        Browse fiction, academic, business, technology, and children’s books available at Chapter House Bookshop.
+      </p>
+    </div>
+  </header>
+
+  <!-- Books Section -->
+  <main class="py-5">
+    <div class="container">
+
+      <!-- Search and Filter Area -->
+      <div class="row mb-4 g-3 align-items-end">
+        <div class="col-md-8">
+          <label for="bookSearch" class="form-label fw-semibold">Search Books</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bookSearch"
+            placeholder="Search by title, author, or category"
+          />
+        </div>
+
+        <div class="col-md-4">
+          <label for="categoryFilter" class="form-label fw-semibold">Filter by Category</label>
+          <select class="form-select" id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="fiction">Fiction</option>
+            <option value="business">Business</option>
+            <option value="technology">Technology</option>
+            <option value="academic">Academic</option>
+            <option value="children">Children</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="text-muted mb-4" id="bookCount">
+        Showing all available books.
+      </p>
+
+      <!-- Book Cards -->
+      <div class="row g-4" id="bookList">
+
+        <!-- Book 1 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="things fall apart"
+          data-author="chinua achebe"
+          data-category="fiction"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/Things Fall Apart.png"
+              alt="Things Fall Apart book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Fiction</span>
+              <h2 class="h5 card-title">Things Fall Apart</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> Chinua Achebe</p>
+              <p class="card-text">
+                A classic African novel about tradition, identity, change, and colonial influence.
+              </p>
+              <p class="fw-bold">KES 950</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="atomic habits"
+          data-author="james clear"
+          data-category="business"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/Atomic Habits.png"
+              alt="Atomic Habits book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Business</span>
+              <h2 class="h5 card-title">Atomic Habits</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> James Clear</p>
+              <p class="card-text">
+                A practical guide to building better habits and improving daily performance.
+              </p>
+              <p class="fw-bold">KES 1,650</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="the very hungry caterpillar"
+          data-author="eric carle"
+          data-category="children"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/The Very Hungry Caterpillar.png"
+              alt="The Very Hungry Caterpillar book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Children</span>
+              <h2 class="h5 card-title">The Very Hungry Caterpillar</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> Eric Carle</p>
+              <p class="card-text">
+                A colourful children’s book suitable for early reading and storytelling.
+              </p>
+              <p class="fw-bold">KES 780</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="introduction to algorithms"
+          data-author="thomas h cormen"
+          data-category="technology"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/Introduction to Algorithms.png"
+              alt="Introduction to Algorithms book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-dark mb-2">Technology</span>
+              <h2 class="h5 card-title">Introduction to Algorithms</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> Thomas H. Cormen</p>
+              <p class="card-text">
+                A detailed computer science book covering algorithms, data structures, and analysis.
+              </p>
+              <p class="fw-bold">KES 4,500</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="principles of accounting"
+          data-author="frank wood"
+          data-category="academic"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/Principles of Accounting.png"
+              alt="Principles of Accounting book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-info text-dark mb-2">Academic</span>
+              <h2 class="h5 card-title">Principles of Accounting</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> Frank Wood</p>
+              <p class="card-text">
+                A useful accounting textbook for students learning financial records and reporting.
+              </p>
+              <p class="fw-bold">KES 2,200</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div
+          class="col-md-4 col-sm-6 book-item"
+          data-title="rich dad poor dad"
+          data-author="robert kiyosaki"
+          data-category="business"
+        >
+          <div class="card h-100 shadow-sm">
+            <img
+              src="images/Rich Dad Poor Dad.png"
+              alt="Rich Dad Poor Dad book cover"
+              class="book-img"
+            />
+
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Business</span>
+              <h2 class="h5 card-title">Rich Dad Poor Dad</h2>
+              <p class="card-text mb-1"><strong>Author:</strong> Robert Kiyosaki</p>
+              <p class="card-text">
+                A personal finance book focused on money habits, investing, and financial thinking.
+              </p>
+              <p class="fw-bold">KES 1,450</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div class="text-center mt-5 d-none" id="noResults">
+        <h3 class="h5">No books found</h3>
+        <p class="text-muted">
+          Try searching for another title, author, or category.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h3 class="h5">Chapter House Bookshop</h3>
+          <p class="mb-0">
+            Quality books for students, families, and everyday readers.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="index.html" class="text-white text-decoration-none">Home</a>
+            </li>
+            <li>
+              <a href="books.html" class="text-white text-decoration-none">Books</a>
+            </li>
+            <li>
+              <a href="contact.html" class="text-white text-decoration-none">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Contact</h4>
+          <p class="mb-1">Email: info@chapterhouse.co.ke</p>
+          <p class="mb-1">Phone: +254 700 123 456</p>
+          <p class="mb-0">Location: Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary" />
+
+      <p class="text-center mb-0">
+        &copy; 2026 Chapter House Bookshop. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

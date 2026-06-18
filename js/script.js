@@ -59,3 +59,55 @@ if (contactForm) {
     }
   });
 }
+
+const bookSearch = document.getElementById("bookSearch");
+const categoryFilter = document.getElementById("categoryFilter");
+const bookItems = document.querySelectorAll(".book-item");
+const noResults = document.getElementById("noResults");
+const bookCount = document.getElementById("bookCount");
+
+if (bookSearch && categoryFilter && noResults && bookCount) {
+  function filterBooks() {
+    const searchValue = bookSearch.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+
+    let visibleBooks = 0;
+
+    bookItems.forEach(function (book) {
+      const title = book.getAttribute("data-title");
+      const author = book.getAttribute("data-author");
+      const category = book.getAttribute("data-category");
+
+      const matchesSearch =
+        title.includes(searchValue) ||
+        author.includes(searchValue) ||
+        category.includes(searchValue);
+
+      const matchesCategory =
+        selectedCategory === "all" || category === selectedCategory;
+
+      if (matchesSearch && matchesCategory) {
+        book.classList.remove("d-none");
+        visibleBooks++;
+      } else {
+        book.classList.add("d-none");
+      }
+    });
+
+    if (visibleBooks === 0) {
+      noResults.classList.remove("d-none");
+      bookCount.textContent = "No books match your search.";
+    } else {
+      noResults.classList.add("d-none");
+
+      if (visibleBooks === bookItems.length) {
+        bookCount.textContent = "Showing all available books.";
+      } else {
+        bookCount.textContent = `Showing ${visibleBooks} matching book(s).`;
+      }
+    }
+  }
+
+  bookSearch.addEventListener("input", filterBooks);
+  categoryFilter.addEventListener("change", filterBooks);
+}
