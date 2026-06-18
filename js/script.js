@@ -1,6 +1,28 @@
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
+  const subjectField = document.getElementById("subject");
+  const bookImageGroup = document.getElementById("bookImageGroup");
+  const bookImage = document.getElementById("bookImage");
+  const bookImageError = document.getElementById("bookImageError");
+
+  function toggleBookImageField() {
+    const shouldShowBookImage = subjectField.value === "Related to Book Purchase";
+
+    if (shouldShowBookImage) {
+      bookImageGroup.classList.remove("d-none");
+      bookImage.required = true;
+    } else {
+      bookImageGroup.classList.add("d-none");
+      bookImage.required = false;
+      bookImage.value = "";
+      bookImageError.textContent = "";
+    }
+  }
+
+  subjectField.addEventListener("change", toggleBookImageField);
+  toggleBookImageField();
+
   contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -8,6 +30,7 @@ if (contactForm) {
     const emailAddress = document.getElementById("emailAddress").value.trim();
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value.trim();
+    const bookImageFile = bookImage.files[0];
 
     const nameError = document.getElementById("nameError");
     const emailError = document.getElementById("emailError");
@@ -19,6 +42,7 @@ if (contactForm) {
     emailError.textContent = "";
     subjectError.textContent = "";
     messageError.textContent = "";
+    bookImageError.textContent = "";
     formSuccess.textContent = "";
 
     let isValid = true;
@@ -44,6 +68,12 @@ if (contactForm) {
       isValid = false;
     }
 
+    if (subject === "Related to Book Purchase" && !bookImageFile) {
+      bookImageError.textContent = "Please upload an image for your book purchase inquiry.";
+      isValid = false;
+    }
+
+
     if (message === "") {
       messageError.textContent = "Please enter your message.";
       isValid = false;
@@ -56,6 +86,7 @@ if (contactForm) {
       formSuccess.textContent = "Your message has been submitted successfully.";
       formSuccess.className = "mt-3 mb-0 fw-semibold text-success";
       contactForm.reset();
+      toggleBookImageField();
     }
   });
 }

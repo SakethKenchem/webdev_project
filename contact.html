@@ -53,7 +53,7 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="page-header text-white text-center d-flex align-items-center">
+  <header class="page-header text-black text-center d-flex align-items-center">
     <div class="container">
       <h1 class="display-5 fw-bold">Contact Us</h1>
       <p class="lead">
@@ -68,7 +68,7 @@
       <div class="row g-4">
         
         <!-- Contact Form -->
-        <div class="col-lg-7">
+        <div class="col-lg-8 col-md-10 mx-auto">
           <div class="card shadow-sm border-0">
             <div class="card-body p-4">
               <h2 class="h4 fw-bold mb-3">Send Us a Message</h2>
@@ -103,9 +103,21 @@
                     <option value="Book Availability">Book Availability</option>
                     <option value="Book Recommendation">Book Recommendation</option>
                     <option value="Order Inquiry">Order Inquiry</option>
+                    <option value="Related to Book Purchase">Related to Book Purchase</option>
                     <option value="General Question">General Question</option>
                   </select>
                   <small class="text-danger" id="subjectError"></small>
+                </div>
+
+                <div class="mb-3 d-none" id="bookImageGroup">
+                  <label for="bookImage" class="form-label">Upload Book Image</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="bookImage"
+                    accept="image/*"
+                  />
+                  <small class="text-danger" id="bookImageError"></small>
                 </div>
 
                 <div class="mb-3">
