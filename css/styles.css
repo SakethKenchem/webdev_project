@@ -6,10 +6,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  min-height: 85vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../assets/images/hero-books.jpg");
+  min-height: 65vh;
   background-size: cover;
   background-position: center;
 }
@@ -40,4 +37,19 @@ footer a:hover {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 16px;
+}
+
+/* Page Header */
+.page-header {
+  min-height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Contact Map Box */
+.map-box {
+  min-height: 220px;
+  background-color: #f1f1f1;
+  border: 2px dashed #c9c9c9;
+  border-radius: 8px;
 }
