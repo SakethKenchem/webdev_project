@@ -59,7 +59,7 @@ footer a:hover {
   min-height: 40vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/books-header.jpg");
+    url("../images/books-header.png");
   background-size: cover;
   background-position: center;
 }
@@ -79,7 +79,43 @@ footer a:hover {
   min-height: 40vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("../images/about-books.jpg");
+    url("../images/about-books.png");
   background-size: cover;
   background-position: center;
 }
+
+/* Contact Page Header */
+.contact-header {
+  min-height: 40vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../images/contact-header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* FAQ Page Header */
+.faq-header {
+  min-height: 40vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../images/faq-header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* FAQ Custom Styling */
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.accordion-button:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+.faq-search-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
