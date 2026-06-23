@@ -142,3 +142,44 @@ if (bookSearch && categoryFilter && noResults && bookCount) {
   bookSearch.addEventListener("input", filterBooks);
   categoryFilter.addEventListener("change", filterBooks);
 }
+
+// FAQ Page Search & Filter Interactivity
+const faqSearch = document.getElementById("faqSearch");
+const faqItems = document.querySelectorAll(".faq-item");
+const noFaqResults = document.getElementById("noFaqResults");
+const faqCount = document.getElementById("faqCount");
+
+if (faqSearch && faqItems && noFaqResults && faqCount) {
+  function filterFAQs() {
+    const searchValue = faqSearch.value.toLowerCase().trim();
+    let visibleFAQs = 0;
+
+    faqItems.forEach(function (item) {
+      const question = item.getAttribute("data-question").toLowerCase();
+      const answer = item.getAttribute("data-answer").toLowerCase();
+
+      const matches = question.includes(searchValue) || answer.includes(searchValue);
+
+      if (matches) {
+        item.classList.remove("d-none");
+        visibleFAQs++;
+      } else {
+        item.classList.add("d-none");
+      }
+    });
+
+    if (visibleFAQs === 0) {
+      noFaqResults.classList.remove("d-none");
+      faqCount.textContent = "No questions match your search.";
+    } else {
+      noFaqResults.classList.add("d-none");
+      if (visibleFAQs === faqItems.length) {
+        faqCount.textContent = "Showing all questions.";
+      } else {
+        faqCount.textContent = `Showing ${visibleFAQs} matching question(s).`;
+      }
+    }
+  }
+
+  faqSearch.addEventListener("input", filterFAQs);
+}
