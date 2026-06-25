@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read customer testimonials and submit your own bookshop review. Learn what readers, students, and families think of Chapter House Bookshop." />
+
+  <title>Chapter House Bookshop | Reviews</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Chapter House Bookshop</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books.html">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="reviews-header text-white text-center d-flex align-items-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Customer Testimonials</h1>
+      <p class="lead">
+        See what our readers, students, and families say about their experience with Chapter House Bookshop.
+      </p>
+    </div>
+  </header>
+
+  <!-- Reviews Section -->
+  <main class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Sidebar Summary & Form -->
+        <div class="col-lg-4">
+          <!-- Rating Summary Card -->
+          <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body p-4 text-center">
+              <h2 class="h5 fw-bold mb-3">Overall Rating</h2>
+              <p class="display-4 fw-bold text-warning mb-1">4.8</p>
+              <div class="star-rating mb-2">★★★★★</div>
+              <p class="text-muted mb-0 small">Based on 124 verified reviews</p>
+              <hr class="my-3" />
+              <div class="text-start">
+                <div class="d-flex align-items-center mb-1">
+                  <span class="small me-2" style="width: 50px">5 stars</span>
+                  <div class="progress flex-grow-1" style="height: 8px">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 82%"></div>
+                  </div>
+                  <span class="small ms-2 text-muted" style="width: 30px">82%</span>
+                </div>
+                <div class="d-flex align-items-center mb-1">
+                  <span class="small me-2" style="width: 50px">4 stars</span>
+                  <div class="progress flex-grow-1" style="height: 8px">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 12%"></div>
+                  </div>
+                  <span class="small ms-2 text-muted" style="width: 30px">12%</span>
+                </div>
+                <div class="d-flex align-items-center mb-1">
+                  <span class="small me-2" style="width: 50px">3 stars</span>
+                  <div class="progress flex-grow-1" style="height: 8px">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 4%"></div>
+                  </div>
+                  <span class="small ms-2 text-muted" style="width: 30px">4%</span>
+                </div>
+                <div class="d-flex align-items-center mb-1">
+                  <span class="small me-2" style="width: 50px">2 stars</span>
+                  <div class="progress flex-grow-1" style="height: 8px">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 1%"></div>
+                  </div>
+                  <span class="small ms-2 text-muted" style="width: 30px">1%</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <span class="small me-2" style="width: 50px">1 star</span>
+                  <div class="progress flex-grow-1" style="height: 8px">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 1%"></div>
+                  </div>
+                  <span class="small ms-2 text-muted" style="width: 30px">1%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Write a Review Card -->
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <h2 class="h5 fw-bold mb-3">Share Your Experience</h2>
+              <form id="reviewForm" novalidate>
+                <div class="mb-3">
+                  <label for="reviewerName" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reviewerName"
+                    placeholder="Enter your name"
+                  />
+                  <small class="text-danger" id="reviewerNameError"></small>
+                </div>
+
+                <div class="mb-3">
+                  <label for="reviewRating" class="form-label">Rating</label>
+                  <select class="form-select text-warning fw-bold" id="reviewRating">
+                    <option value="" class="text-dark">Select Rating</option>
+                    <option value="5" class="text-warning">★★★★★ (5 Stars)</option>
+                    <option value="4" class="text-warning">★★★★☆ (4 Stars)</option>
+                    <option value="3" class="text-warning">★★★☆☆ (3 Stars)</option>
+                    <option value="2" class="text-warning">★★☆☆☆ (2 Stars)</option>
+                    <option value="1" class="text-warning">★☆☆☆☆ (1 Star)</option>
+                  </select>
+                  <small class="text-danger" id="reviewRatingError"></small>
+                </div>
+
+                <div class="mb-3">
+                  <label for="reviewTitle" class="form-label">Review Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="reviewTitle"
+                    placeholder="E.g., Great Sourcing, Helpful Staff"
+                  />
+                  <small class="text-danger" id="reviewTitleError"></small>
+                </div>
+
+                <div class="mb-3">
+                  <label for="reviewText" class="form-label">Your Review</label>
+                  <textarea
+                    class="form-control"
+                    id="reviewText"
+                    rows="4"
+                    placeholder="Write your detailed feedback here..."
+                  ></textarea>
+                  <small class="text-danger" id="reviewTextError"></small>
+                </div>
+
+                <button type="submit" class="btn btn-warning w-100">
+                  Submit Review
+                </button>
+                <p class="mt-3 mb-0 text-success fw-semibold text-center" id="reviewFormSuccess"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews List -->
+        <div class="col-lg-8">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h4 fw-bold mb-0">Customer Reviews</h2>
+            <span class="badge bg-dark px-3 py-2" id="reviewsListCount">3 Reviews</span>
+          </div>
+
+          <div id="reviewsList">
+            <!-- Review 1 -->
+            <div class="card shadow-sm border-0 mb-3 review-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start flex-wrap g-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Fast Sourcing and Great Support</h3>
+                    <p class="text-muted small mb-2">Submitted by <strong>Saketh K.</strong> on June 22, 2026</p>
+                  </div>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+                <p class="mb-0 text-secondary">
+                  Amazing bookstore! I needed specific university computer science textbooks for class and they sourced them within three days and gave me a great discount. The team is extremely supportive and communicated clearly via email throughout the process.
+                </p>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="card shadow-sm border-0 mb-3 review-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start flex-wrap g-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Excellent for Families</h3>
+                    <p class="text-muted small mb-2">Submitted by <strong>Amina O.</strong> on June 18, 2026</p>
+                  </div>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+                <p class="mb-0 text-secondary">
+                  A wonderful place for families! My children love the Saturday morning reading and storytelling sessions. The children's section is full of beautiful, colorful storybooks that are highly affordable. It's quickly become our favorite weekend spot in Nairobi CBD.
+                </p>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="card shadow-sm border-0 mb-3 review-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start flex-wrap g-2">
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">Smooth Mobile Order & Delivery</h3>
+                    <p class="text-muted small mb-2">Submitted by <strong>David N.</strong> on June 10, 2026</p>
+                  </div>
+                  <div class="star-rating">★★★★☆</div>
+                </div>
+                <p class="mb-0 text-secondary">
+                  Great service. I inquired about a productivity book on their contact page, they verified stock immediately, and I paid via M-Pesa till. The courier delivered the book to my office in Westlands by the next afternoon. Very reliable!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <h3 class="h5">Chapter House Bookshop</h3>
+          <p class="mb-0">
+            Quality books for students, families, and everyday readers.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="books.html" class="text-white text-decoration-none">Books</a></li>
+            <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+            <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+            <li><a href="reviews.html" class="text-white text-decoration-none">Reviews</a></li>
+            <li><a href="events.html" class="text-white text-decoration-none">Events</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6">Contact</h4>
+          <p class="mb-1">Email: info@chapterhouse.co.ke</p>
+          <p class="mb-1">Phone: +254 700 123 456</p>
+          <p class="mb-0">Location: Nairobi, Kenya</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary" />
+
+      <p class="text-center mb-0">
+        &copy; 2026 Chapter House Bookshop. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
