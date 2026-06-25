@@ -118,4 +118,56 @@ footer a:hover {
 .faq-search-box {
   max-width: 600px;
   margin: 0 auto;
-}
+}
+
+/* Reviews Page Header */
+.reviews-header {
+  min-height: 40vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../images/reviews-header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Events Page Header */
+.events-header {
+  min-height: 40vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../images/events-header.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Star Ratings Styling */
+.star-rating {
+  color: #ffc107;
+  font-size: 1.15rem;
+}
+
+/* Reviews List Styles */
+.review-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Events Cards Styling */
+.event-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+.event-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
