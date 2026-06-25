@@ -285,4 +285,60 @@ if (reviewForm && reviewsList && reviewsListCount) {
       .replace(/'/g, "&#039;");
   }
 }
+
+// Events Page Filtering Interactivity
+const btnFilterAll = document.getElementById("btnFilterAll");
+const btnFilterUpcoming = document.getElementById("btnFilterUpcoming");
+const btnFilterPast = document.getElementById("btnFilterPast");
+const eventItems = document.querySelectorAll(".event-item");
+const noEventsResults = document.getElementById("noEventsResults");
+const eventsCount = document.getElementById("eventsCount");
+
+if (btnFilterAll && btnFilterUpcoming && btnFilterPast && eventItems && noEventsResults && eventsCount) {
+  function filterEvents(timelineFilter) {
+    let visibleEvents = 0;
+
+    eventItems.forEach(function (card) {
+      const cardTimeline = card.getAttribute("data-timeline");
+
+      if (timelineFilter === "all" || cardTimeline === timelineFilter) {
+        card.classList.remove("d-none");
+        visibleEvents++;
+      } else {
+        card.classList.add("d-none");
+      }
+    });
+
+    // Update active button classes
+    [btnFilterAll, btnFilterUpcoming, btnFilterPast].forEach(function (btn) {
+      btn.classList.remove("active", "btn-warning");
+      btn.classList.add("btn-outline-dark");
+    });
+
+    if (timelineFilter === "all") {
+      btnFilterAll.classList.add("active", "btn-warning");
+      btnFilterAll.classList.remove("btn-outline-dark");
+      eventsCount.textContent = `Showing all ${visibleEvents} events.`;
+    } else if (timelineFilter === "upcoming") {
+      btnFilterUpcoming.classList.add("active", "btn-warning");
+      btnFilterUpcoming.classList.remove("btn-outline-dark");
+      eventsCount.textContent = `Showing ${visibleEvents} upcoming event(s).`;
+    } else if (timelineFilter === "past") {
+      btnFilterPast.classList.add("active", "btn-warning");
+      btnFilterPast.classList.remove("btn-outline-dark");
+      eventsCount.textContent = `Showing ${visibleEvents} past event(s).`;
+    }
+
+    if (visibleEvents === 0) {
+      noEventsResults.classList.remove("d-none");
+    } else {
+      noEventsResults.classList.add("d-none");
+    }
+  }
+
+  btnFilterAll.addEventListener("click", function () { filterEvents("all"); });
+  btnFilterUpcoming.addEventListener("click", function () { filterEvents("upcoming"); });
+  btnFilterPast.addEventListener("click", function () { filterEvents("past"); });
+}
+
 
