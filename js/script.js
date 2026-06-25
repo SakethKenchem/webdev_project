@@ -182,4 +182,107 @@ if (faqSearch && faqItems && noFaqResults && faqCount) {
   }
 
   faqSearch.addEventListener("input", filterFAQs);
-}
+}
+
+// Reviews Form Submission & Dynamic Card Insertion
+const reviewForm = document.getElementById("reviewForm");
+const reviewsList = document.getElementById("reviewsList");
+const reviewsListCount = document.getElementById("reviewsListCount");
+
+if (reviewForm && reviewsList && reviewsListCount) {
+  let reviewsCount = 3;
+
+  reviewForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("reviewerName").value.trim();
+    const rating = document.getElementById("reviewRating").value;
+    const title = document.getElementById("reviewTitle").value.trim();
+    const text = document.getElementById("reviewText").value.trim();
+
+    const nameError = document.getElementById("reviewerNameError");
+    const ratingError = document.getElementById("reviewRatingError");
+    const titleError = document.getElementById("reviewTitleError");
+    const textError = document.getElementById("reviewTextError");
+    const formSuccess = document.getElementById("reviewFormSuccess");
+
+    nameError.textContent = "";
+    ratingError.textContent = "";
+    titleError.textContent = "";
+    textError.textContent = "";
+    formSuccess.textContent = "";
+
+    let isValid = true;
+
+    if (name === "") {
+      nameError.textContent = "Please enter your name.";
+      isValid = false;
+    } else if (name.length < 3) {
+      nameError.textContent = "Name must be at least 3 characters.";
+      isValid = false;
+    }
+
+    if (rating === "") {
+      ratingError.textContent = "Please select a rating.";
+      isValid = false;
+    }
+
+    if (title === "") {
+      titleError.textContent = "Please enter a review title.";
+      isValid = false;
+    } else if (title.length < 4) {
+      titleError.textContent = "Title must be at least 4 characters.";
+      isValid = false;
+    }
+
+    if (text === "") {
+      textError.textContent = "Please write your review.";
+      isValid = false;
+    } else if (text.length < 10) {
+      textError.textContent = "Review must be at least 10 characters.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      const newCard = document.createElement("div");
+      newCard.className = "card shadow-sm border-0 mb-3 review-card";
+
+      let stars = "";
+      const ratingValue = parseInt(rating);
+      for (let i = 1; i <= 5; i++) {
+        stars += i <= ratingValue ? "★" : "☆";
+      }
+
+      newCard.innerHTML = `
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-start flex-wrap g-2">
+            <div>
+              <h3 class="h6 fw-bold mb-1">${escapeHtml(title)}</h3>
+              <p class="text-muted small mb-2">Submitted by <strong>${escapeHtml(name)}</strong> on June 25, 2026</p>
+            </div>
+            <div class="star-rating">${stars}</div>
+          </div>
+          <p class="mb-0 text-secondary">${escapeHtml(text)}</p>
+        </div>
+      `;
+
+      reviewsList.insertBefore(newCard, reviewsList.firstChild);
+
+      reviewsCount++;
+      reviewsListCount.textContent = `${reviewsCount} Reviews`;
+
+      formSuccess.textContent = "Your review has been submitted successfully!";
+      reviewForm.reset();
+    }
+  });
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+}
+
