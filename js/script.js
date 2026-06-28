@@ -362,18 +362,15 @@ if (themeToggle && themeToggleIcon) {
     localStorage.setItem("theme", theme);
 
     if (theme === "dark") {
-      themeToggleIcon.textContent = "☀️";
+      themeToggleIcon.textContent = "Light Mode";
       themeToggle.classList.remove("btn-outline-light");
       themeToggle.classList.add("btn-outline-warning");
       document.body.classList.add("dark-theme");
     } else {
-      themeToggleIcon.textContent = "🌙";
+      themeToggleIcon.textContent = "Dark Mode";
       themeToggle.classList.remove("btn-outline-warning");
       themeToggle.classList.add("btn-outline-light");
       document.body.classList.remove("dark-theme");
     }
   }
 }
-
-
-
