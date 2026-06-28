@@ -341,4 +341,39 @@ if (btnFilterAll && btnFilterUpcoming && btnFilterPast && eventItems && noEvents
   btnFilterPast.addEventListener("click", function () { filterEvents("past"); });
 }
 
+// Dark/Light Theme Switcher & Persistence
+const themeToggle = document.getElementById("themeToggle");
+const themeToggleIcon = document.getElementById("themeToggleIcon");
+
+if (themeToggle && themeToggleIcon) {
+  const currentTheme = localStorage.getItem("theme") || 
+    (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+  setTheme(currentTheme);
+
+  themeToggle.addEventListener("click", function () {
+    const activeTheme = document.documentElement.getAttribute("data-bs-theme");
+    const newTheme = activeTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  });
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute("data-bs-theme", theme);
+    localStorage.setItem("theme", theme);
+
+    if (theme === "dark") {
+      themeToggleIcon.textContent = "☀️";
+      themeToggle.classList.remove("btn-outline-light");
+      themeToggle.classList.add("btn-outline-warning");
+      document.body.classList.add("dark-theme");
+    } else {
+      themeToggleIcon.textContent = "🌙";
+      themeToggle.classList.remove("btn-outline-warning");
+      themeToggle.classList.add("btn-outline-light");
+      document.body.classList.remove("dark-theme");
+    }
+  }
+}
+
+
 
